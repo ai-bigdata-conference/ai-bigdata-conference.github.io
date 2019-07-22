@@ -32,8 +32,8 @@ if (empty($_POST["message"])) {
 }
 
 
-$EmailTo = "email@gmail.com";
-$Subject = "New Message Received";
+$EmailTo = "ana.duarte.correia@tecnico.ulisboa.pt";
+$Subject = "[AI&BigData - Conference] - Informations/Message";
 
 // prepare email body text
 $Body = "";
