@@ -1,20 +1,3 @@
-function updateMailString() {
-  var mailString;
-  var selectect;
-
-  $.each($("input[class='.sev_check']:checked"), function(){
-    selectect = $(this).val();
-});
-
-    mailString = '?subject=' + encodeURIComponent($('#name').val())
-        + '&body=' + 
-        "name: " + encodeURIComponent($('#name').val())+
-        "\n email: " + $('#email').val() +
-        "\n institution: " +  encodeURIComponent($('#institution').val()) +
-        "\n phoneNumber: " +  encodeURIComponent($('#phone_number').val()) ;
-        //+ "\n Paper presentation: " + selectect;
-    $('#contactForm').attr('action',  'mailto:ana.duarte.correia@gmail.com​' + mailString);
-}
 
 (function($) {
 
@@ -98,40 +81,3 @@ function updateMailString() {
   });
 
 }(jQuery));
-
-var selected;
-
-$(function () {
-  $('.sev_check').change(function(e) {
-      e.preventDefault();
-      $('.sev_check').not(this).prop('checked', false);
-      $(this).prop('checked', true);
-      
-      //updateMailString();
-  });
-});
-
-$(function () {
-  $('.sev_check').click(function(e) {
-    $('.sev_check').not(this).prop('checked', false);
-    //updateMailString();
-  });
-});
-
-
-
-function loadEvents() {
-
-  
-  $( "#name" ).focusout(function() { updateMailString(); });
-  $( "#email" ).focusout(function() { updateMailString(); });
-  $( "#institution" ).focusout(function() { updateMailString(); });
-  $( "#phone_number" ).focusout(function() { updateMailString(); });
-}
-
-$(document).ready(function() {
-  $('#form-submit').click(function() {
-    updateMailString();
-    $('#form-submit').submit();
-  });
-});

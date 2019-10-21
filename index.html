@@ -1389,13 +1389,12 @@
           <div class="col-lg-7 col-md-12 col-xs-12">
             <div class="container-form wow fadeInLeft" data-wow-delay="0.2s">
               <div class="form-wrapper">
-                <form role="form" method="post" id="contactForm" name="contact-form" data-toggle="validator">
+                <form role="form" method="POST" id="contactForm" name="contact-form" data-toggle="validator">
                   <div class="row">
                     <div class="col-md-12 form-line">
                       <div class="form-group">
-                          <h10 style="font-size: 15px;">Nome | Name*</h10>
-                        <!--<h10>Nome | Name*</h10>-->
-                        <input type="text" class="form-control" id="name" name="email" placeholder="Nome | Name" required data-error="Please enter your name">
+                          <h10 style="font-size: 15px;">Name*</h10>
+                        <input type="text" class="form-control" id="name" name="email" placeholder="Name" required data-error="Please enter your name">
                         <div class="help-block with-errors"></div>
                       </div>
                     </div>
@@ -1408,37 +1407,31 @@
                     </div>
                     <div class="col-md-12 form-line">
                       <div class="form-group">
-                        <h10 style="font-size: 15px;">Instituição | Institution*</h10>
-                        <input type="tel" class="form-control" id="institution" name="subject" placeholder="Instituição | Institution*" required data-error="Please enter your Institution">
+                        <h10 style="font-size: 15px;">Institution*</h10>
+                        <input type="tel" class="form-control" id="institution" name="subject" placeholder="Institution*" required data-error="Please enter your Institution">
                         <div class="help-block with-errors"></div>
                       </div>
                     </div>
                     <div class="col-md-12 form-line">
                       <div class="form-group">
-                        <h10 style="font-size: 15px;">Número de telefone | Phone number*</h10>
-                        <input type="tel" class="form-control" id="phone_number" name="subject" placeholder="Número de telefone | Phone number*" required data-error="Please enter your Phone number">
+                        <h10 style="font-size: 15px;">Phone number*</h10>
+                        <input type="tel" pattern="[0-9]{9}" class="form-control" id="phone_number" name="subject" placeholder="Phone number*" required data-error="Please enter your Phone number(Ex: 918740325)">
                         <div class="help-block with-errors"></div>
                       </div>
                     </div>
                     <div class="col-md-12">
                       <div class="form-group">
-                        <h10 style="font-size: 15px;">Apresentação de paper | Paper presentation*</h10>
-                        <!--<textarea class="form-control" rows="4" id="message" name="message" required data-error="Write your message"></textarea>-->
-                        <!-- Default inline 1-->
-<div class="custom-control custom-checkbox custom-control">
-  <input type="checkbox" class="sev_check custom-control-input" id="defaultInline1">
-  <label class="custom-control-label" for="defaultInline1">Yes</label>
-</div>
-
-<!-- Default inline 2-->
-<div class="custom-control custom-checkbox custom-control">
-  <input type="checkbox" class="sev_check custom-control-input" id="defaultInline2">
-  <label class="custom-control-label" for="defaultInline2">No</label>
-</div>
-
-
+                        <h10 style="font-size: 15px;">Paper presentation*</h10>
+                        <div class="custom-control custom-checkbox custom-control">
+                          <input type="checkbox" class="sev_check custom-control-input" required value="Yes" id="defaultInline1">
+                          <label class="custom-control-label" for="defaultInline1">Yes</label>
+                        </div>
+                        <div class="custom-control custom-checkbox custom-control">
+                          <input type="checkbox" class="sev_check custom-control-input" required value="No" id="defaultInline2">
+                          <label class="custom-control-label" for="defaultInline2">No</label>
+                        </div>
                       </div>
-                      <p>* Preenchimento obrigatório | Mandatory fields</p>
+                      <p>* Mandatory fields</p>
                       <div class="form-submit">
                         <button type="submit" class="btn btn-common" id="form-submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Send Us Now</button>
                         <div id="msgSubmit" class="h3 text-center hidden"></div>
@@ -1452,6 +1445,8 @@
         </div>
       </div>
     </section>
+
+
     <!-- Contact Us Section End -->
 
 
@@ -1578,6 +1573,7 @@
     <script src="assets/js/form-validator.min.js"></script>
     <script src="assets/js/contact-form-script.min.js"></script>
     <script src="assets/js/map.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 
   </body>
 </html>
